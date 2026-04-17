@@ -53,6 +53,18 @@ void APawnActor::BeginPlay()
 
 }
 
+void APawnActor::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	FVector Velocity(0,0,0);
+
+	// 1. 중력 가속도 적용 (Z축)
+	Velocity.Z += -980.f * DeltaTime;
+
+	// 2. 위치 이동
+	AddActorWorldOffset(Velocity * DeltaTime, true);
+}
+
 
 
 // Called to bind functionality to input
