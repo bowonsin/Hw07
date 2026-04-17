@@ -7,7 +7,9 @@
 AActorPlayerController::AActorPlayerController()
 	:InputMappingContext(nullptr),
 	MoveAction(nullptr),
-	LookAction(nullptr)
+	LookAction(nullptr),
+	UpdownAction(nullptr),
+	RollAction(nullptr)
 {
 
 }

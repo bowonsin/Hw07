@@ -49,9 +49,16 @@ protected:
 	void Move(const FInputActionValue& value);
 	UFUNCTION()
 	void Look(const FInputActionValue& value);
+	UFUNCTION()
+	void MoveUpDown(const FInputActionValue& value);
+	UFUNCTION()
+	void LookRoll(const FInputActionValue& value);
 
 public:
+	UPROPERTY(visibleAnywhere, BluePrintReadOnly, Category = "Speed")
 	float NormalSpeed;
+
+	UPROPERTY(visibleAnywhere, BluePrintReadOnly, Category = "Speed")
 	float AirSpeed;
 private:
 	bool AirCheck;
