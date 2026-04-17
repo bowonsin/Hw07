@@ -3,18 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameMode.h"
-#include "Shin_GameMode.generated.h"
+#include "GameFramework/PlayerController.h"
+#include "Test_.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class HW_07_API AShin_GameMode : public AGameMode
+class HW_07_API ATest_ : public APlayerController
 {
 	GENERATED_BODY()
-
-public:
-	AShin_GameMode();
 	
 };

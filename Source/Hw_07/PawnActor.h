@@ -9,7 +9,8 @@
 class UStaticMesh;
 class USpringArmComponent;
 class UCameraComponent;
-class UStaticMeshComponent;
+class USkeletalMeshComponent;
+class UBoxComponent;
 struct FInputActionValue;
 UCLASS()
 class HW_07_API APawnActor : public APawn
@@ -36,5 +37,22 @@ public :
 	UCameraComponent* CameraComp;
 
 	UPROPERTY(visibleAnywhere, BluePrintReadOnly, Category = "Mesh")
-	UStaticMeshComponent* MeshComp;
+	USkeletalMeshComponent* SK_MeshComp;
+
+	UPROPERTY(visibleAnywhere, BluePrintReadOnly, Category = "Mesh")
+	UBoxComponent* BoxComp;
+
+	
+protected:
+
+	UFUNCTION()
+	void Move(const FInputActionValue& value);
+	UFUNCTION()
+	void Look(const FInputActionValue& value);
+
+public:
+	float NormalSpeed;
+	float AirSpeed;
+private:
+	bool AirCheck;
 };
