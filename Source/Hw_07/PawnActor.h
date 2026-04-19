@@ -30,6 +30,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+
 public :
 	UPROPERTY(visibleAnywhere, BluePrintReadOnly, Category = "Camera")
 	USpringArmComponent* SpringArmComp;
@@ -56,11 +57,16 @@ protected:
 	void LookRoll(const FInputActionValue& value);
 
 public:
-	UPROPERTY(visibleAnywhere, BluePrintReadOnly, Category = "Speed")
-	float NormalSpeed;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Speed")
+	float fNormalSpeed;
 
-	UPROPERTY(visibleAnywhere, BluePrintReadOnly, Category = "Speed")
-	float AirSpeed;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Speed")
+	float fAirSpeed;
 private:
-	bool AirCheck;
+	bool LineTrace();
+	void MoveDownGravity(const float& DeltaTime);
+	FTransform MovingSpeed(float X  , float Y , float Z );
+
+	bool bAirCheck;
+
 };
