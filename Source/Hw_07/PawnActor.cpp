@@ -128,7 +128,9 @@ void APawnActor::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 bool APawnActor::LineTrace()
 {
 	TEnumAsByte<ECollisionChannel> TraceChannel;
+	// 보이는 시야 기준으로 충돌 체크 
 	TraceChannel = ECC_Visibility;
+	
 	
 	FVector StartTrace = GetActorLocation();
 	// z 값 방향으로 
